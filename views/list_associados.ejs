@@ -6,10 +6,53 @@
     <title>Associados</title>
   </head>
   <body>
-    <ul>
-      <% users.forEach(function(e) { %>
-        <li><%=e.nome%> <a href="/alterar_associado/<%=e.id%>">Alterar</a></li>
-      <% }); %>
-    </ul>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <a href="/associados">Cadastrar Novo Associado</a>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Email</th>
+          <th>Endereço</th>
+          <th>Número</th>
+          <th>Complemento</th>
+          <th>Bairro</th>
+          <th>Cidade</th>
+          <th>UF</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(e) { %>
+          <tr>
+            <td><%=e.id%></td>
+            <td><%=e.nome%></td>
+            <td><%=e.cpf%></td>
+            <td><%=e.email%></td>
+            <td><%=e.endereco%></td>
+            <td><%=e.numero%></td>
+            <td><%=e.complemento%></td>
+            <td><%=e.bairro%></td>
+            <td><%=e.cidade%></td>
+            <td><%=e.uf%></td>
+            <td>
+              <a href="/alterar_associado/<%=e.id%>">Alterar</a>
+              <a href="/remover_associado/<%=e.id%>">Remover</a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
   </body>
 </html>

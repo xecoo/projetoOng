@@ -22,8 +22,7 @@ class Associado {
       cidade,
       uf
     })
-
-    res.send(`Parabéns, você registrou o associado ${nome}, o ID dele é o ${result}!`)
+    res.redirect('/list_associado')
   }
   async update(req, res) {
     let id = req.body.id
@@ -51,7 +50,7 @@ class Associado {
         uf
       })
 
-    res.send(`Parabéns, você atualizou o associado ${nome}`)
+    res.redirect('/list_associado')
   }
 }
 

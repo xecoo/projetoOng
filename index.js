@@ -14,7 +14,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-  res.render('index.ejs')
+  res.redirect('/list_associado')
 })
 
 app.get('/associados', (req, res) => {
@@ -47,6 +47,15 @@ app.get('/alterar_associado/:id', async (req, res) => {
   res.render('alterar_associado.ejs', {
     dados: result
   })
+})
+
+app.get('/remover_associado/:id', async (req, res) => {
+  const id = req.params.id
+  const result = await knex('associado')
+    .where({ id })
+    .del()
+
+  res.redirect('/list_associado')
 })
 
 
