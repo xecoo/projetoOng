@@ -8,14 +8,14 @@
   <h2>Alterar Associado<h2>
   <form action="/alterar_associado" method="POST">
     <input type="hidden" name="id" value="<%=dados.id%>">
-    <input type="text" placeholder="Nome" name="nome" value="<%=dados.nome%>">
-    <input type="text" placeholder="CPF" name="cpf" value="<%=dados.cpf%>">
-    <input type="email" placeholder="Email" name="email" value="<%=dados.email%>">
-    <input type="text" placeholder="Endereco" name="endereco" value="<%=dados.endereco%>">
-    <input type="text" placeholder="Numero" name="numero" value="<%=dados.numero%>">
+    <input type="text" placeholder="Nome" name="nome" value="<%=dados.nome%>" required>
+    <input type="number" placeholder="CPF" name="cpf" value="<%=dados.cpf%>" required>
+    <input type="email" placeholder="Email" name="email" value="<%=dados.email%>" required>
+    <input type="text" placeholder="Endereco" name="endereco" value="<%=dados.endereco%>" required>
+    <input type="number" placeholder="Numero" name="numero" value="<%=dados.numero%>" required>
     <input type="text" placeholder="Complemento" name="complemento" value="<%=dados.complemento%>">
-    <input type="text" placeholder="Bairro" name="bairro" value="<%=dados.bairro%>">
-    <input type="text" placeholder="Cidade" name="cidade" value="<%=dados.cidade%>">
+    <input type="text" placeholder="Bairro" name="bairro" value="<%=dados.bairro%>" required>
+    <input type="text" placeholder="Cidade" name="cidade" value="<%=dados.cidade%>" required>
     <select name="estado">
       <option value="AC" <% if(dados.uf == "AC") {%> selected <%} %>>Acre</option>
       <option value="AL" <% if(dados.uf == "AL") {%> selected <%} %>>Alagoas</option>
