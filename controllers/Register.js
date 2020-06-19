@@ -14,7 +14,6 @@ class Register {
         nome,
         senha
       })
-      .first()
       
       res.send(`Parabéns, você se registrou com o username ${nome}, senha ${senha} e o id é o ${result}!`)
     } else {

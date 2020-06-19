@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Associados</title>
+  </head>
+  <body>
+    <ul>
+      <% users.forEach(function(e) { %>
+        <li><%=e.nome%> <a href="/alterar_associado/<%=e.id%>">Alterar</a></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
