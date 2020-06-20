@@ -5,7 +5,7 @@ const Register = require('./controllers/Register');
 const Login = require('./controllers/Login');
 const Associado = require('./controllers/Associado');
 const { where } = require('./config');
-const porta = process.env.PORT || 8080;
+const porta = 8080;
 const register = new Register();
 const login = new Login();
 const associado = new Associado();
@@ -57,8 +57,6 @@ app.get('/remover_associado/:id', async (req, res) => {
 
   res.redirect('/list_associado')
 })
-
-
 
 app.post('/register', register.registar)
 app.post('/login', login.logar)
