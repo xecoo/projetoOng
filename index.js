@@ -1,14 +1,14 @@
-const app = require('express')()
-const bodyParser = require('body-parser')
-const knex = require('./config')
-const Register = require('./controllers/Register')
-const Login = require('./controllers/Login')
-const Associado = require('./controllers/Associado')
-const { where } = require('./config')
-
-const register = new Register()
-const login = new Login()
-const associado = new Associado()
+const app = require('express')();
+const bodyParser = require('body-parser');
+const knex = require('./config');
+const Register = require('./controllers/Register');
+const Login = require('./controllers/Login');
+const Associado = require('./controllers/Associado');
+const { where } = require('./config');
+const porta = process.env.PORT || 8080;
+const register = new Register();
+const login = new Login();
+const associado = new Associado();
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -31,7 +31,7 @@ app.get('/users', async (req, res) => {
 app.get('/list_associado', async (req, res) => {
   const result = await knex('associado')
     .select('*')
-  
+
   res.render('list_associados.ejs', {
     users: result
   })
@@ -65,4 +65,4 @@ app.post('/login', login.logar)
 app.post('/associados', associado.create)
 app.post('/alterar_associado', associado.update)
 
-app.listen(3333)
+app.listen(porta);
